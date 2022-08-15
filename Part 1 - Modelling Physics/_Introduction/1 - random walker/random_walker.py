@@ -9,6 +9,7 @@ pygame.init()
 WIDTH = 640
 HEIGHT = 360
 WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
 
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 FPS = 30
@@ -31,6 +32,7 @@ while not over:
     for w in walkers:
         # w.step()
         w.render(SCREEN)
+        w.color = BLACK
 
     new_walker_position = walkers[-1].get_new_coordinates()
     walker = Walker(new_walker_position[0], new_walker_position[1])

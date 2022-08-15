@@ -1,8 +1,9 @@
 import random
+from re import X
 import pygame
 
 
-BLACK = (0, 0, 0)
+RED = (255, 0, 0)
 
 
 class Walker:
@@ -10,6 +11,7 @@ class Walker:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.color = RED
         self.direction: str
         self.width = 15
         self.length = 60
@@ -31,7 +33,7 @@ class Walker:
         y: int
 
         if self.direction == 'N':
-            x = self.x
+            x = self.x  # - self.width
             y = self.y - self.length
 
         elif self.direction == 'E':
@@ -43,7 +45,7 @@ class Walker:
             y = self.y + self.length
 
         elif self.direction == 'W':
-            x = self.x - self.length
+            x = (self.x - self.length)  # + self.width
             y = self.y
 
         coordinates = (x, y)
@@ -52,14 +54,28 @@ class Walker:
 
     def render(self, screen):
         if self.direction == 'N':
-            pygame.draw.rect(screen, BLACK, (self.x, self.y - self.length,
-                                             self.width, self.length))
+            x = self.x
+            y = self.y - self.length
+            width = self.width
+            length = self.length
+
         elif self.direction == 'E':
-            pygame.draw.rect(screen, BLACK, (self.x, self.y,
-                                             self.length, self.width))
+            x = self.x
+            y = self.y
+            width = self.length
+            length = self.width
+
         elif self.direction == 'S':
-            pygame.draw.rect(screen, BLACK, (self.x, self.y,
-                                             self.width, self.length))
+            x = self.x
+            y = self.y
+            width = self.width
+            length = self.length
+
         elif self.direction == 'W':
-            pygame.draw.rect(screen, BLACK, (self.x-self.length, self.y,
-                                             self.length, self.width))
+            x = self.x - self.length
+            y = self.y
+            width = self.length
+            length = self.width
+
+        pygame.draw.rect(screen, self.color, (x, y,
+                                              width, length))
