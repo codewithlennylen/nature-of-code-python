@@ -2,7 +2,7 @@
 
 Recreating the programming projects by Daniel Shiffman, in Python
 
-Daniel Shiffman wrote a book and created YouTube videos accompanying the material, where he gets to model/build natural systems in code.
+[Daniel Shiffman](http://github.com/shiffman/The-Nature-of-Code) wrote a book and created YouTube videos accompanying the material, called [Nature of Code](http://www.natureofcode.com) where he gets to model/build natural systems in code.
 
 The code is in Processing (Java); Processing is an open source programming language and environment for people who want to create images, animations, and interactions.
 
@@ -15,8 +15,8 @@ The code is in Processing (Java); Processing is an open source programming langu
 3. Oscillation
 4. Particle Systems
 5. Physics Engines
-   1. Box2D
-   2. Toxiclibs
+   1. [Box2D](http://www.box2d.org)
+   2. [Toxiclibs](http://toxiclibs.org/)
       1. VerletPhysics
 6. Steering Forces
 

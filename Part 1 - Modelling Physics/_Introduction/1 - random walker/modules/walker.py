@@ -13,8 +13,8 @@ class Walker:
         self.y = y
         self.color = RED
         self.direction: str
-        self.width = 15
-        self.length = 60
+        self.width = 5
+        self.length = 20
 
     def step(self):
         choice: int = random.randrange(0, 4)
